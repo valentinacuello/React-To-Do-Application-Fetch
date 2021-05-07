@@ -1,13 +1,122 @@
 @import "~bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600&display=swap');
 
-/* 
+*{
+    padding: 0;
+    margin: 0;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
 
-*/
+.todo-body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    background-color: #e3d0e9;
+    font-family: "Raleway";
+
+    .todo-container{
+        height: 100vh;
+        padding-top: 3em;
+        
+        h1{
+            font-size: 3rem;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+
+        .todo-content{
+            width: 310px;
+            background-color: #fff;            
+            padding: 1em;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 2px;
+
+            form{
+
+                &::after{
+                    content: "";
+                    width: 100%;
+                    display: block;
+                    height: 1px;
+                    background-color: #e2e2e2;
+                }
+
+                input{
+                    width: 100%;
+                    height: 50px;
+                    outline: none;
+                    border: none;
+                    font-family: "Raleway";    
+                    margin-bottom: 5px;            
+                }
+            }
+            
+            
+            .lista{
+
+                ul{
+                    li{
+                    list-style: none;
+                    height: 50px;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+
+                        p{
+                            padding: 1em 0;
+                            margin-bottom: 0 !important;
+                        }
+
+                        button{
+                            border: none;
+                            background: none;
+                            font-weight: 600;
+                            color: rgb(122, 122, 122);
+                            padding-right: .5;
+                        }
+
+                        .active {
+                            display: block;
+                        }
+
+                        &::after{
+                            content: "";
+                            width: 100%;
+                            display: block;
+                            height: 1px;
+                            background-color: #e2e2e2;                         
+                        }
+                    }                
+                
+                }
+
+            }
+
+            @media all and (min-width: 768px){
+                &{
+                    width: 500px;
+                }
+            }
+
+
+            
+
+            & > div:last-child{
+            
+                p{
+                    font-size: .8rem;
+                    color: #8b8b8b;
+                    margin: 0;
+                }
+            }
+
+        }
+
+    }
+
+}

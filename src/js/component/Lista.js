@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { XCircle } from "react-bootstrap-icons";
 
 const Lista = () => {
 	const [tarea, setTarea] = useState("");
 	const [listaTareas, setListaTareas] = useState([]);
-	const [mouseOver, setMouseOver] = useState(false);
+	const [mouseOver, setMouseOver] = useState();
 
 	const añadirTarea = event => {
 		event.preventDefault();
@@ -90,24 +91,26 @@ const Lista = () => {
 						<ul>
 							{listaTareas.map((obj, index) => {
 								return (
-									<li key={index}>
+									<li
+										key={index}
+										onMouseOver={() => {
+											setMouseOver(index);
+										}}
+										onMouseOut={() => {
+											setMouseOver();
+										}}>
 										<p>{obj.label}</p>
 										<button
 											onClick={() => {
 												deleteTarea(index);
 											}}
-											onMouseOver={() => {
-												setMouseOver(index);
-											}}
-											onMouseOut={() => {
-												setMouseOver(index);
-											}}
 											className={
-												mouseOver == index
-													? " active"
-													: ""
+												"btn-delete " +
+												(mouseOver == index
+													? "active"
+													: "")
 											}>
-											X
+											<XCircle />
 										</button>
 									</li>
 								);

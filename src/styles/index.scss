@@ -14,7 +14,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    background-color: #e3d0e9;
+    background-color: #e6e6e6;
     font-family: "Raleway";
 
     .todo-container{
@@ -66,22 +66,28 @@
                     display: flex;
                     justify-content: space-between;
                     flex-wrap: wrap;
+                    cursor: pointer;
 
                         p{
                             padding: 1em 0;
                             margin-bottom: 0 !important;
                         }
 
-                        button{
+                        .btn-delete{
                             border: none;
                             background: none;
                             font-weight: 600;
                             color: rgb(122, 122, 122);
                             padding-right: .5;
+                            visibility: hidden;
                         }
 
                         .active {
-                            display: block;
+                            visibility: visible !important;
+
+                            &:hover{
+                                color: rgb(199, 37, 37);
+                            }
                         }
 
                         &::after{

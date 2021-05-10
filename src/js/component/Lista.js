@@ -53,13 +53,10 @@ const Lista = () => {
 
 	const getData = () => {
 		fetch(
-			"https://assets.breatheco.de/apis/fake/listaactualizada/user/rossig4"
+			"https://assets.breatheco.de/apis/fake/todos/user/valentinacuello"
 		)
 			.then(resp => {
-				// console.log(resp.ok); // Será true (verdad) si la respuesta es exitosa.
-				// console.log(resp.status); // el código de estado = 200 o código = 400 etc.
-				// console.log(resp.text()); // Intentará devolver el resultado exacto como cadena (string)
-				return resp.json(); // (regresa una promesa) will try to parse the result as json as return a promise that you can .then for results
+				return resp.json();
 			})
 			.then(data => {
 				//Aquí es donde debe comenzar tu código después de que finalice la búsqueda
